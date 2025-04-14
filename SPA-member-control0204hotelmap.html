@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>全國旅館地圖，使用OSM</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/roller.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="css/MarkerCluster.css" />
+    <style>
+      .marker-cluster-medium {
+        background-color: rgba(111, 223, 6, 0.2);
+      }
+      .marker-cluster-medium div {
+        background-color: rgba(12, 136, 252, 0.8);
+      }
+      .marker-cluster-small {
+        background-color: rgba(218, 233, 10, 0.2);
+      }
+      .marker-cluster-small div {
+        background-color: rgba(163, 20, 247, 0.8);
+      }
+      .marker-cluster div {
+        width: 30px;
+        height: 30px;
+        margin-left: 5px;
+        margin-top: 5px;
+        font-size: 16px;
+        font-weight: 900;
+        text-align: center;
+        border-radius: 50%;
+      }
+      .marker-cluster span {
+        line-height: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="s02" class="bg-dark">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="0115spa_member_control_panel.html">
+              <div class="h1">控制台</div>
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="0115spa.html"
+                    >首頁</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">保留功能</a>
+                </li>
+              </ul>
+              <div>
+                <span
+                  class="h4 text-white fw-400 md-5 my-auto d-none"
+                  id="s02_username_showtext"
+                  >歡迎會員:<span
+                    class="h4 text-success md-5"
+                    id="s02_username_text"
+                  ></span
+                ></span>
+                <button class="btn btn-light d-none" id="s02_loginout_btn">
+                  登出
+                </button>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </section>
+    <div class="container-fluid">
+      <div class="row vh-100">
+        <div class="col-md-4 bg-001">
+          <select
+            name="mycity"
+            id="mycity"
+            class="form-select form-select-lg mt-3"
+          >
+            <option value="" selected disabled>---選擇縣市名稱---</option>
+            <option value="台北市">台北市</option>
+            <option value="台中市">台中市</option>
+            <option value="高雄市">高雄市</option>
+          </select>
+          <select
+            name="myarea"
+            id="myarea"
+            class="form-select form-select-lg mt-3"
+          >
+            <option value="" selected disabled>---選擇鄉鎮區名稱---</option>
+            <option value="南屯區">南屯區</option>
+            <option value="北屯區">北屯區</option>
+            <option value="西屯區">西屯區</option>
+          </select>
+          <ul
+            class="list-group mt-3"
+            id="mylist"
+            style="height: 80vh; overflow: scroll"
+          >
+            <li class="list-group-item">
+                <div>
+                    <img src="img/a.JPG" alt="" width="550px" class="img-fluid shadow-lg rounded-1">
+                    <p class="h4 fw-900 text-info">xx旅館</p>
+                    <p class="h5 ">地址:xxxxx</p>
+                    <p class="h5 ">電話:xxxxx</p>
+                </div> 
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-8 bg-002">
+          <div id="map" class="vh-100 bg-003"></div>
+        </div>
+      </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="js/leaflet.markercluster.js"></script>
+    <script src="js/leaflet-color-markers.js"></script>
+    <script src="js/aurth.js"></script>
+    <script>
+      var allCityData; //所有縣市資料
+      var hotelData; //旅館資料
+      var mycity; //紀錄所選的縣市名稱
+      var myarea; //紀錄所選的鄉鎮區名稱
+      var map;
+      var markers;
+
+      $(function () {
+        
+        //drawmap
+        map = L.map("map").setView([24.171642, 120.609483], 17);
+
+        L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          attribution:
+            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        }).addTo(map);
+
+        markers = new L.markerClusterGroup().addTo(map);
+
+        // var popupHTML = `<img src="img/dt11.jpg" class="img-fluid">`;
+        // L.marker([24.171642, 120.609483]).addTo(map).bindPopup(popupHTML);
+        //.openPopup();
+
+        //旅館資料
+        $.ajax({
+          type: "GET",
+          url: "js/hotel_C_f.json",
+          dataType: "json",
+          success: function (data) {
+            console.log(data);
+            hotelData = data.XML_Head.Infos.Info;
+            console.log(hotelData);
+
+          },
+          error: function () {
+            Swal.fire({
+              title: "API介接錯誤?",
+              text: "js/hotel_C_f.json",
+              icon: "error",
+            });
+          },
+        });
+
+        //縣市資料
+        $.ajax({
+          type: "GET",
+          url: "js/CityCountyData.json",
+          dataType: "json",
+          success: function (data) {
+            // console.log(data);
+            allCityData = data;
+            console.log(allCityData);
+
+            //產生縣市選單
+            $("#mycity").empty();
+            $("#mycity").append(
+              '<option value="" selected disabled>---選擇縣市名稱---</option>'
+            );
+            allCityData.forEach(function (item) {
+              console.log(item.CityName);
+              var strHTML = `<option value="${item.CityName}">${item.CityName}</option>`;
+              $("#mycity").append(strHTML);
+            });
+          },
+          error: function () {
+            Swal.fire({
+              title: "API介接錯誤?",
+              text: "js/CityCountyData.json",
+              icon: "error",
+            });
+          },
+        });
+
+        //監聽縣市選單
+        $("#mycity").change(function () {
+          console.log($(this).val());
+          mycity = $(this).val();
+
+          //過濾所選取的縣市名稱,並找出該鄉鎮區的資料
+          allCityData.forEach(function (item) {
+            if (item.CityName == mycity) {
+              $("#myarea").empty();
+              $("#myarea").append(
+                '<option value="">---選擇鄉鎮區名稱---</option>'
+              );
+              item.AreaList.forEach(function (itemarea) {
+                console.log(itemarea.AreaName);
+                //產生縣市選單
+                var strHTML = `<option value="${itemarea.AreaName}">${itemarea.AreaName}</option>`;
+                $("#myarea").append(strHTML);
+              });
+            }
+          });
+        });
+
+        //監聽鄉鎮區選單
+        $("#myarea").change(function () {
+          //抹除地圖上所有marker
+          removeMarker();
+
+          console.log($(this).val());
+          myarea = $(this).val();
+
+          //過濾旅館資料
+          $("#mylist").empty();
+          var counter = 0;
+          hotelData.forEach(function (item) {
+            if (
+              item.Region == mycity &&
+              item.Town == myarea
+            ) {
+              console.log(item);
+              counter++;
+              if (counter == 1) {
+                map.panTo([
+                  item.Py,
+                  item.Px,
+                ]);
+              }
+              var strHTML = `<li class="list-group-item" data-picture1="${item.Picture1}" data-name="${item.Name}" data-add="${item.Add}" data-tel="${item.Tel}" data-py="${item.Py}" data-px="${item.Px}">
+                <div>
+                    <img src="${item.Picture1}" alt="" width="550px" class="img-fluid shadow-lg rounded-1">
+                    <p class="h4 fw-600 text-info">${item.Name}</p>
+                    <p class="h5 ">地址:${item.Add}</p>
+                    <p class="h5 ">電話:${item.Tel}</p>
+                </div> 
+            </li>`;
+              $("#mylist").append(strHTML);
+
+              //產生marker
+              var popupHTML = `<div class="card">
+                                <div class="card" style="width: 18rem;">
+                                <img src="${item.Picture1}" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-900 text-info">${item.Name}</h5>
+                                    <p class="card-text">地址:${item.Add}</p>
+                                    <p class="card-text">電話:${item.Tel}</p>
+                                </div>
+                                </div>`;
+              // L.marker([
+              //   item.geometry.coordinates[1],
+              //   item.geometry.coordinates[0],
+              // ])
+              //   .addTo(map)
+              //   .bindPopup(popupHTML);
+              markers.addLayer(
+                L.marker(
+                  [item.Py, item.Px],
+                  { icon: zulsIcon }
+                ).bindPopup(popupHTML)
+              );
+            }
+          });
+
+          //監聽list-group-item
+          $("#mylist .list-group-item").click(function () {
+            console.log($(this).data("Picture1"));
+            console.log($(this).data("Name"));
+            console.log($(this).data("Add"));
+            console.log($(this).data("Tel"));
+            console.log($(this).data("py"));
+            console.log($(this).data("px"));
+
+            markerPopup(
+              $(this).data("picture1"),
+              $(this).data("name"),
+              $(this).data("add"),
+              $(this).data("tel"),
+              $(this).data("py"),
+              $(this).data("px"),
+            );
+          });
+        });
+      });
+
+      //抹除地圖上所有marker
+      // //https://leafletjs.com/reference.html
+      // function removeMarker() {
+      //   map.eachLayer(function (layer) {
+      //     if (layer instanceof L.Marker) {
+      //       map.removeLayer(layer);
+      //     }
+      //   });
+      // }
+
+      // use cluser抹除地圖上所有marker
+      function removeMarker() {
+        markers.eachLayer(function (layer) {
+          if (layer instanceof L.Marker) {
+            markers.removeLayer(layer);
+          }
+        });
+      }
+
+      function markerPopup(
+        Picture1,
+        Name,
+        Add,
+        Tel,
+        Py,
+        Px
+      ) {
+        //產生marker
+        var popupHTML = `<div class="card">
+                                <div class="card" style="width: 18rem;">
+                                <img src="${Picture1}" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-900 text-info">${Name}</h5>
+                                    <p class="card-text">地址:${Add}</p>
+                                    <p class="card-text">電話:${Tel}</p>
+                                </div>
+                                </div>`;
+        L.marker([Py, Px]).addTo(map).bindPopup(popupHTML).openPopup();
+      }
+
+    </script>
+  </body>
+</html>

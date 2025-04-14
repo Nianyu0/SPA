@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>進貨建檔</title>
+    <link rel="stylesheet" href="css/roller.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <style>
+      body {
+        font-family: "Zen Maru Gothic", serif;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">麵食進貨管理介面</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active"  href="0102-C-product.html"
+                >進貨建檔</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="0102-R-product.html">進貨列表</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row justify-content-center py-5">
+        <div class="col-md-10">
+          <div class="card">
+            <div class="card-body">
+              <div class="mb-3">
+                <label for="" class="form-label">產品</label>
+                <input
+                  type="text"
+                  name="pname"
+                  id="pname"
+                  class="form-control is-invalid"
+                  placeholder="字數2-6"
+                  list="pname_list"
+                />
+                <datalist id="pname_list">
+                  <option value="牛肉"></option>
+                  <option value="麵粉"></option>
+                  <option value="烏龍麵"></option>
+                  <option value="黃麵"></option>
+                  <option value="蔥"></option>
+                  <option value="辣醬"></option>
+                  <option value="豬肉"></option>
+                  <option value="小黃瓜"></option>
+                  <option value="醋"></option>
+                  <option value="泡菜"></option>
+                  <option value="豆芽菜"></option>
+                </datalist>
+                <div class="valid-feedback" id="pname-valid-feedback">
+                  符合規則
+                </div>
+                <div class="invalid-feedback" id="pname-invalid-feedback">
+                  不符合規則
+                </div>
+              </div>
+              <div class="mb3">
+                <label for="" class="form-label">價格</label>
+                <input
+                  type="text"
+                  name="price"
+                  id="price"
+                  class="form-control is-invalid"
+                  max="5000"
+                  min="0"
+                />
+                <div class="valid-feedback">符合規則</div>
+                <div class="invalid-feedback">不符合規則</div>
+              </div>
+              <div class="mb3">
+                <label for="" class="form-label">數量</label>
+                <input
+                  type="number"
+                  name="total"
+                  id="total"
+                  class="form-control is-invalid"
+                  max="100"
+                  min="0"
+                />
+                <div class="valid-feedback">符合規則</div>
+                <div class="invalid-feedback">不符合規則</div>
+              </div>
+              <div class="mb-3">
+                <label for="" class="form-label">說明</label>
+                <textarea
+                  type="text"
+                  name="remark"
+                  id="remark"
+                  class="form-control is-invalid"
+                  placeholder="字數2-10"
+                ></textarea>
+                <div class="valid-feedback">符合規則</div>
+                <div class="invalid-feedback">不符合規則</div>
+              </div>
+              <div class="mb-3">
+                <label for="" class="form-label">圖片</label>
+                <input
+                  type="file"
+                  class="form-control form-control-lg is-invalid"
+                  id="fileupload"
+                />
+
+                <div class="valid-feedback">上傳格式為jpeg or png!</div>
+                <div class="invalid-feedback">上傳格式不為jpeg or png!</div>
+                <img
+                  src=""
+                  alt=""
+                  class="img-fluid w-50 mt-3 d-none"
+                  id="prveImg"
+                />
+              </div>
+              <div class="text-center" id="ok_btn" name="ok_btn">
+                <button class="btn btn-secondary">取消</button>
+                <button class="btn btn-danger">確定</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+      var flag_pname = false;
+      var flag_price = false;
+      var flag_remark = false;
+      var flag_total = false;
+      var flag_photo = false;
+
+      $(function () {
+        //即時監聽 pname
+        $("#pname").bind("input propertychange", function () {
+          if ($(this).val().length > 0 && $(this).val().length < 7) {
+            var JSONdata = {};
+            JSONdata["pname"] = $(this).val();
+            console.log(JSON.stringify(JSONdata));
+
+            // 傳遞至後端確認品名是否可以使用
+            $.ajax({
+              type: "POST",
+              url: "http://192.168.10.71/web2024/0102-check_uni.php",
+              data: JSON.stringify(JSONdata),
+              dataType: "json",
+              success: showdata_check_uni,
+              error: function () {
+                alert("error-http://192.168.10.71/web2024/0102-check_uni.php");
+              },
+            });
+          } else {
+            $("#pname-invalid-feedback").text("不符合規則");
+            $("#pname").removeClass("is-valid");
+            $("#pname").addClass("is-invalid");
+            flag_pname = false;
+          }
+        });
+        //及時監聽 price
+        $("#price").bind("input propertychange", function () {
+          if ($(this).val().length > 0 && $(this).val().length < 101) {
+            $("#price").removeClass("is-invalid");
+            $("#price").addClass("is-valid");
+            flag_price = true;
+          } else {
+            $("#price").removeClass("is-valid");
+            $("#price").addClass("is-invalid");
+            flag_price = false;
+          }
+        });
+        //及時監聽 total
+        $("#total").bind("input propertychange", function () {
+          if ($(this).val().length > 0 && $(this).val().length < 100) {
+            $("#total").removeClass("is-invalid");
+            $("#total").addClass("is-valid");
+            flag_price = true;
+          } else {
+            $("#total").removeClass("is-valid");
+            $("#total").addClass("is-invalid");
+            flag_price = false;
+          }
+        });
+        //及時監聽 remark
+        $("#remark").bind("input propertychange", function () {
+          if ($(this).val().length > 1 && $(this).val().length < 11) {
+            $("#remark").removeClass("is-invalid");
+            $("#remark").addClass("is-valid");
+            flag_remark = true;
+          } else {
+            $("#remark").removeClass("is-valid");
+            $("#remark").addClass("is-invalid");
+            flag_remark = false;
+          }
+        });
+        //監聽按鈕 _btn
+        $("#ok_btn").click(function () {
+          if (flag_pname && flag_price && flag_total && flag_photo && flag_remark) {
+            //傳遞至後端API 執行新增
+
+            var dataJSON = {};
+            dataJSON["pname"] = $("#pname").val();
+            dataJSON["price"] = $("#price").val();
+            dataJSON["total"] = $("#total").val();
+            dataJSON["photo"] = $("#photo").val();
+            dataJSON["remark"] = $("#remark").val();
+            console.log(JSON.stringify(dataJSON));
+
+            $.ajax({
+              type: "POST",
+              url: "0102-C.php",
+              dataType: "json",
+              data: JSON.stringify(dataJSON),
+              success: showdata,
+              error: function () {
+                aler("error-0102-C.php");
+              },
+            });
+          } else {
+            Swal.fire({
+              title: "欄位有錯誤, 請修正",
+              icon: "warning",
+              showCancelButton: false,
+              confirmButtonColor: "#3085d6",
+              cancelButtonColor: "#d33",
+              confirmButtonText: "確認",
+            }).then((result) => {});
+          }
+        });
+      });
+      function showdata(data) {
+        console.log(data);
+        if (data.state) {
+          //alert(data.message);
+          //location.href = "0102-C-product.html";
+          Swal.fire({
+            icon: "success",
+            title: data.message,
+            showDenyButton: false,
+            showCancelButton: false,
+            confirmButtonText: "確認",
+            denyButtonText: `不儲存`,
+            allowOutsideClick: false,
+          }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+              location.href = "0102-C-product.html";
+            }
+          });
+        } else {
+          alert(data.message);
+        }
+      }
+      function showdata_check_uni(data) {
+        console.log(data);
+        if (data.state) {
+          $("#pname").removeClass("is-invalid");
+          $("#pname").addClass("is-valid");
+          $("#pname-valid-feedback").text(data.message);
+          flag_pname = true;
+        } else {
+          $("#pname").removeClass("is-valid");
+          $("#pname").addClass("is-invalid");
+          $("#pname-invalid-feedback").text(data.message);
+          flag_pname = false;
+        }
+      }
+
+      $(function () {
+        //files 專有名稱
+        $("#fileupload").change(function () {
+          let file = this.files[0];
+          if (
+            file &&
+            (file.type === "image/jpeg" || file.type === "image/png")
+          ) {
+            let imgURL = URL.createObjectURL(file);
+            $("#prveImg").attr("src", imgURL).removeClass("d-none");
+            $(this).removeClass("is-invalid").addClass("is-valid");
+            flag_ok_btn = true;
+          } else {
+            $("#prveImg").addClass("d-none");
+            $(this).removeClass("is-valid").addClass("is-invalid");
+            flag_ok_btn = false;
+          }
+        });
+      });
+
+      function showdata(data) {
+        console.log(data);
+      }
+    </script>
+  </body>
+</html>
