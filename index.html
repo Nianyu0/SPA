@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ch14.形象官網製作(快樂登山)</title>
+    <link rel="stylesheet" href="css/roller.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <style>
+       body {
+        font-family: "Zen Maru Gothic", serif;
+      }
+
+      .box01 {
+            padding: 10px;
+            box-shadow: 2px 2px 6px 2px #ddcccc;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .box01 .h4 {
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        .box02 {
+            padding: 10px;
+            box-shadow: 2px 2px 6px 2px #ddcccc;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+       .img-fluid {
+        object-fit: cover;
+        height: 400px;
+       }
+     
+      .s12-text{
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 15px;
+        }
+      @media screen and (max-width: 768px) {
+            .s05-text, .s08-text, .s13-text {
+                z-index: 10;
+                background-color: rgba(0, 0, 0, 0.2);
+                color: white;
+                margin: 15px;
+                box-shadow: 2px 2px 4px 2px #faf9f9;
+                border-radius: 15px;
+                padding: 15px;
+            }
+        }
+    </style>
+  </head>
+  <body>
+    <!--section 01-->
+    <section id="s01" class="bg-secondary py-1">
+      <div class="container">
+        <div class="text-end">
+          <a href="#">
+            <i class="fa-brands fa-square-facebook text-info"></i>
+          </a>
+          <a href="#">
+            <i class="fa-brands fa-square-threads text-success"></i>
+          </a>
+          <a href="#">
+            <i class="fa-brands fa-square-x-twitter text-warning"></i>
+          </a>
+          <a href="#">
+            <i class="fa-brands fa-square-instagram text-light"></i>
+          </a>
+          <a href="#">
+            <i class="fa-brands fa-line text-dark"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!--section 02標頭-->
+    <section id="s02" class="bg-dark">
+      <div class="container">
+          <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+              <div class="container-fluid">
+                  <a class="navbar-brand" href="#">
+                    <i class="fa-solid fa-democrat text-warning fa-2x"></i>
+                  </a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                      aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                          <li class="nav-item">
+                              <a class="nav-link active" aria-current="page" href="#">首頁</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#s13">經歷</a>
+                        </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="#s04">企業精神</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#s05">內容介紹</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#s12">流程介紹</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#s06">路線介紹</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#s14">裝備推薦</a>
+                        </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#s07">團隊介紹</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#s15">行前須知</a>
+                        </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#s08">方案選擇</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#s09">加入我們</a>
+                          </li>
+                          <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                  aria-expanded="false">
+                                  Dropdown
+                              </a>
+                              <ul class="dropdown-menu">
+                                  <li class="nav-item d-none" id="s02_control_panel_btn"><a class="dropdown-item" href="0115spa_member_control_panel.html">控制台</a></li>
+
+                                  <li  class="nav-item d-none" id="s02_maskmap_btn"><a class="dropdown-item" href="SPA-member-control0204maskmap.html">口罩地圖</a></li>
+
+                                  <li class="nav-item d-none" id="s02_youbikemap_btn"><a class="dropdown-item" href="SPA-member-control0204youbikemap.html">台中YouBike</a></li>
+
+                                  <li class="nav-item d-none" id="s02_hotelmap_btn"><a class="dropdown-item" href="SPA-member-control0204hotelmap.html">全台旅館地圖</a></li>
+
+                                  <li class="nav-item d-none" id="s02_hotelchart_btn"><a class="dropdown-item" href="0214hotelCchart.html">全台旅館報表</a></li>
+
+                                  <li>
+                                      <hr class="dropdown-divider">
+                                  </li>
+                                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                              </ul>
+                          </li>
+                      </ul>
+                      <div>
+                        <span class="h4 text-white fw-400 md-5 my-auto d-none" id="s02_username_showtext">歡迎會員:<span class="h4 text-success md-5" id="s02_username_text"></span></span>
+                          <button class="btn btn-warning" data-bs-toggle="modal"
+                              data-bs-target="#registerModal"
+                              id="s02_reg_btn">註冊</button>
+                          <button class="btn btn-success" data-bs-toggle="modal"
+                          data-bs-target="#loginModal" id="s02_login_btn">登入</button>
+                          <button class="btn btn-light d-none" id="s02_loginout_btn">登出</button>
+
+                      </div>
+                  </div>
+              </div>
+          </nav>
+      </div>
+  </section>
+
+    <!-- registerModal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+              <div class="modal-header text-bg-info">
+                  <h1 class="modal-title fs-4 fw-900 ms-5" id="exampleModalLabel">會員註冊</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <div class="row">
+                      <div class="col-6">
+                          <div class="d-flex flex-column h-100 ms-5">
+                              <div class="display-6 fw-900 my-3 ">會員守則</div>
+                              <h5>1.真實資訊   ，誠信註冊</h5>
+                              <p class="ms-3">為確保您能順利使用所有會員服務，請提供真實且完整的個人資料。您的帳戶資訊將僅用於本平台服務，不會外洩。</p>
+                              <h5>2.保護帳號安全</h5>
+                              <p class="ms-3">請妥善保管您的帳號和密碼，避免與他人共享。若發現帳號異常或有未授權的活動，請立即與我們聯繫。</p>
+                              <h5>3.遵守平台規範</h5>
+                              <p class="ms-3">註冊會員後，請遵守平台使用條款及社群規範。禁止發布違法、侵權或不當的內容，共同維護良好的網路環境。</p>
+                              <h5>4.積極參與   ，共同成長</h5>
+                              <p class="ms-3">我們鼓勵會員積極參與平台活動，分享寶貴的經驗與建議，與其他會員共同成長，營造活躍且有益的社群。</p>
+                              <div class="mt-auto form-check form-switch">
+                                  <input type="checkbox" class="form-check-input is-invalid" role="switch" id="chk01" name="chk01">
+                                  <label for="chk01" class="form-check-label" >不同意</label>
+                                  <p class="valid-feedback">.</p>
+                                  <p class="invalid-feedback">須同意才能註冊</p>
+                              </div>                              
+                          </div>
+                      </div>
+                      <div class="col-6">
+                          <div class="mb-3">
+                              <label for="username_reg" class="form-label">帳號</label>
+                              <input type="text" class="form-control is-invalid" id="username_reg" name="username_reg" placeholder="3-6字數">
+                              <div class="valid-feedback" id="registerModal_username_valid-feedback">帳號符合規定</div>
+                              <div class="invalid-feedback" id="registerModal_username_invalid-feedback">帳號不符合規定</div>
+                          </div>
+                          <div class="mb-3">
+                              <label for="password_reg" class="form-label" placeholder="3-6字數">密碼</label>
+                              <input type="password" class="form-control is-invalid" id="password_reg" name="password_reg">
+                              <div class="valid-feedback" >密碼符合規定</div>
+                              <div class="invalid-feedback">密碼不符合規定</div>
+                          </div>
+                          <div class="mb-3">
+                              <label for="re_password_reg" class="form-label">確認密碼</label>
+                              <input type="password" class="form-control is-invalid" id="re_password_reg" name="re_password_reg">
+                              <div class="valid-feedback">密碼正確</div>
+                              <div class="invalid-feedback">密碼不正確</div>
+                          </div>
+                          <div class="mb-3">
+                              <label for="email_reg" class="form-label">Email</label>
+                              <input type="email" class="form-control is-invalid" id="email_reg" name="email_reg">
+                              <div class="valid-feedback">信箱符合規定</div>
+                              <div class="invalid-feedback">信箱不符合規定</div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                  <button type="button" class="btn btn-primary" id="ok_btn_reg">確認</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+
+    <!-- loginModal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header text-bg-light">
+        <h1 class="modal-title fs-4 fw-900" id="exampleModalLabel">會員登入</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="username_login" class="form-label">帳號</label>
+          <input type="text" class="form-control is-invalid" id="username_login" name="username_login">
+          <div class="invalid-feedback">請輸入帳號</div>
+        </div>
+        <div class="mb-3">
+          <label for="password_login" class="form-label">密碼</label>
+          <input type="password" class="form-control is-invalid" id="password_login" name="password_login">
+          <div class="invalid-feedback">請輸入密碼</div>
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" id="ok_btn_login" >確認</button>
+      </div>
+    </div>
+  </div>
+  </div>
+    </div>
+
+    <!--section 03投影片-->
+    <section id="s03">
+      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active bg-cover" style="height: 50vh; background-image: url(img/dt7.jpg);">
+            <div class="carousel-caption d-none d-md-block d-none d-md-block p-3 rounded-4 shadow-lg" style="background-color: rgba(0, 0, 0, 0.2);">
+              <h3 class="fw-900">合歡山</h5>
+              <p class="fs-5">合歡山位於台灣中部，是登山健行和賞日出的理想場所。擁有合歡主峰和東峰等多條登山路線，適合各種程度的登山愛好者。尤其在清晨，山頂的日出景觀壯麗，雲海和山巒交織，令人心曠神怡。春夏時，合歡山的高山草原被杜鵑花和雪山草等美麗花卉點綴，是攝影愛好者的天堂。冬季，偶爾的降雪景觀更是吸引許多遊客前來欣賞。合歡山不僅有美麗的自然景色，還提供了放鬆和享受大自然的完美機會。</p>
+            </div>
+          </div>
+          <div class="carousel-item bg-cover" style="height: 50vh; background-image: url(img/dt8.jpg);">
+            <div class="carousel-caption d-none d-md-block d-none d-md-block p-3 rounded-4 shadow-lg" style="background-color: rgba(0, 0, 0, 0.2);">
+              <h3 class="fw-900">玉山</h5>
+              <p class="fs-5">玉山是台灣的最高峰，擁有3,952公尺的海拔，吸引無數登山愛好者挑戰。登頂玉山需要兩天一夜的行程，沿途可欣賞到美麗的高山草甸、原始森林和壯麗的山脈景觀。山頂的日出尤為迷人，清晨的陽光灑在山巒之間，形成壯麗的景色。玉山不僅是登山健行的聖地，也是生物多樣性的寶庫，是大自然愛好者的理想選擇。</p>
+            </div>
+          </div>
+          <div class="carousel-item bg-cover" style="height: 50vh; background-image: url(img/dt9.jpg);">
+            <div class="carousel-caption d-none d-md-block d-none d-md-block p-3 rounded-4 shadow-lg" style="background-color: rgba(0, 0, 0, 0.2);">
+              <h3 class="fw-900">阿里山</h5>
+              <p class="fs-5">阿里山位於嘉義縣，是台灣最具代表性的旅遊景點之一。以其壯麗的日出、雲海和阿里山小火車聞名。每到清晨，遊客便可以在阿里山觀景台欣賞到壯麗的日出景觀。阿里山小火車穿越原始森林，帶領旅客領略大自然的美麗。此外，阿里山的神木區、樱花季節和高山茶園也是受遊客喜愛的景點，無論是大自然愛好者還是文化愛好者，來到阿里山都能找到滿足的樂趣。</p>
+            </div>
+          </div>
+          <div class="carousel-item bg-cover" style="height: 50vh; background-image: url(img/dt10.jpg);">
+            <div class="carousel-caption d-none d-md-block d-none d-md-block p-3 rounded-4 shadow-lg" style="background-color: rgba(0, 0, 0, 0.2);">
+              <h3 class="fw-900">太平山</h5>
+              <p class="fs-5">太平山位於宜蘭縣，以其茂密的森林和寧靜的自然景色著稱。太平山森林鐵道是這裡的熱門景點，遊客可搭乘小火車穿梭於原始森林中，體驗昔日木材運輸的歷史。太平山還擁有多條健行步道，適合喜愛登山健行的遊客。特別是松柏嶺步道和大漢山步道，提供美麗的山景和豐富的生態。無論是觀光、健行還是享受大自然的寧靜，太平山都是放鬆心靈的好去處。</p>
+            </div>
+          </div>
+          <div class="carousel-item bg-cover" style="height: 50vh; background-image: url(img/dt11.jpg);">
+            <div class="carousel-caption d-none d-md-block d-none d-md-block p-3 rounded-4 shadow-lg" style="background-color: rgba(0, 0, 0, 0.2);">
+              <h3 class="fw-900">國內旅遊</h5>
+              <p class="fs-5">台灣擁有多樣化的旅遊景點，無論是自然景觀、文化體驗還是美食之旅，都能滿足各種需求。北部的陽明山擁有火山地形和溫泉，春天的櫻花和冬季的梅花吸引眾多遊客。而淡水的古街、海邊景色和美食則是悠閒遊覽的好選擇。中部的日月潭是台灣著名的湖泊，周圍的山脈和自行車道也非常適合健行和騎行。
+
+                南部的墾丁是海灘度假的天堂，擁有碧海藍天，水上活動豐富；台南則以古老街道和宗教文化著稱，擁有許多歷史遺跡和美味小吃。東部的花蓮和台東擁有壯麗的海岸線和原住民文化，是喜愛大自然和冒險的旅客最佳去處。</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+
+    <!--section 13經歷-->
+    <section id="s13" class="bg-008">
+      <div class="container-fluid d-none d-md-block">
+        <div class="row align-items-center">
+          <div class="col-md-5 bg-cover " style="background-image: url(img/mountain2.jpg); height: 410px;" ></div>
+            <div class="col-7 mt-3 text-center s13-text">
+              <div class="h1 fw-900">西元1944年<span class="text-warning ">首支專業登山團隊</span></div>
+              <div class="h1 fw-900 mb-5">匯聚全台頂尖嚮導</div>
+              <p class="mb-1">我們的團隊由經驗豐富的專業嚮導組成，為您提供最安全、專業的登山體驗。</p>
+              <p class="mb-1">無論是挑戰高峰還是輕鬆健行，我們都能依照您的需求設計完美的登山行程。</p>
+              <p class="mb-1">我們致力於讓每一位參與者都能享受大自然的美好，同時提升登山技能和體能。</p>
+              <div class="row mt-5">
+                <div class="col-md-3">
+                  <div class="h3">年均登山活動</div>
+                  <div class="h1 fw-900 counter01">100<span class="h4">場</span></div>
+                </div>
+                <div class="col-md-3">
+                  <div class="h3 fw-900">專業證書</div>
+                  <div class="h1 fw-900 counter02">15<span class="h4">項</span></div>
+                </div>
+                <div class="col-md-3">
+                  <div class="h3 fw-900">獲獎項目</div>
+                  <div class="h1 fw-900 counter03">18<span class="h4">項</span></div>
+                </div>
+                <div class="col-md-3">
+                  <div class="h3 fw-900">登山路線</div>
+                  <div class="h1 fw-900 counter04">15<span class="h4">條</span></div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!--section 04理念-->
+    <section id="s04" class="bg-001">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 text-center my-4">
+            <i class="fa-solid fa-handshake fa-7x text-danger d-none d-md-block"></i>
+            <h2 class="text-white fw-900 my-3">經驗豐富</h2>
+            <p>我們的登山嚮導擁有多年專業經驗，無論您是新手還是資深登山者，我們都能提供適合的行程安排與安全指導。</p>
+          </div>
+          <div class="col-md-4 text-center my-4">
+            <i class="fa-solid fa-plane-departure fa-7x text-warning d-none d-md-block"></i>
+            <h2 class="text-white fw-900 my-3">量身訂製</h2>
+            <p>我們提供量身訂製的登山計劃，根據您的需求和能力，設計專屬的行程，讓每一趟登山旅程都充滿挑戰與成就感。</p>
+          </div>
+          <div class="col-md-4 text-center my-4">
+            <i class="fa-solid fa-shield-halved fa-7x text-success d-none d-md-block"></i>
+            <h2 class="text-white fw-900 my-3">安全至上</h2>
+            <p>安全是我們的首要任務。每位嚮導都經過專業訓練，並配備必要的安全設備，確保每位參與者都能在安全的環境中享受登山的樂趣。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--section 05為甚麼選擇我們-->
+    <section id="s05" class="position-relative">
+      <div class="row">
+        <div class="col-md-5 position-absolute bottom-0 top-0 bg-cover " style="background-image: url(img/mountain.jpg);"></div>
+      </div>
+      <div class="container">
+        <div class="row justify-content-end">
+          <div class="col-md-7 text-center s05-text">
+            <div class="h3 fw-900 my-3">為甚麼選擇我們</div>
+            <p>我們的登山團隊擁有多年的專業經驗，提供精心設計的行程，無論是新手還是資深登山者，都能在我們的帶領下享受安全且充實的登山體驗。我們堅持用心服務，為每一位參與者提供最佳的旅行體驗。</p>
+            <button class="btn btn-outline-warning">查看更多</button>
+            <div class="row my-3">
+              <div class="col-md-6">
+                <div class="h4 fw-900">專業嚮導</div>
+                <p>我們的嚮導皆經過專業訓練，具備深厚的登山知識和技能，保證每一位遊客都能安全、愉快地完成旅程。</p>
+              </div>
+              <div class="col-md-6">
+                <div class="h4 fw-900">精心設計行程</div>
+                <p>每條登山路線都經過精心規劃，根據不同的需求設計，從入門級到高難度挑戰，確保每位遊客都能找到最適合的行程。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--section 12流程介紹-->
+    <section id="s12" class="bg-secondary pt-2 bg-cover" style="background-image: url(img/mountain2.jpg);">
+      <div class="container">
+        <div class="row justify-content-end align-items-center">
+          <div class="row col-md-3">
+            <div class="s12-text">
+              <div class="h1 text-warning">登山活動流程介紹</div>
+              <p class="text-white fs-5">為了讓每位參與者能夠順利並安全地完成登山之旅，我們設計了一系列簡單而清晰的流程。</p>
+            </div>
+          </div>
+          <div class="row col-md-8">
+            <div class="row align-items-center">
+              <div class="col-6">
+                <div class="s12-text text-white  rounded-3 shadow-lg">
+                  <h2>步驟一:選擇登山路線</h2>
+                  <p>根據您的體能和經驗，選擇一條適合的登山路線非常重要。無論您是初學者還是經驗豐富的登山者，我們都會提供多種選擇，讓您能夠在安全的前提下，享受挑戰和冒險。</p>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="s12-img bg-cover rounded-3 shadow-lg" style="height: 220px; background-image: url(img/mountain5.jpg);"></div>
+            </div>
+        </div>
+        <div class="row align-items-center flex-row-reverse">
+            <div class="col-6">
+                <div class="s12-text text-white  rounded-3 shadow-lg">
+                    <h2>步驟二：選擇登山裝備</h2>
+                    <p>適合的裝備是保障您登山安全的基礎。無論是極端天氣還是長時間行走，我們的專業顧問都會給您最實用的建議。</p>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="s12-img bg-cover rounded-3 shadow-lg" style="height: 220px; background-image: url(img/mountain4.jpg);"></div>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-6">
+                <div class="s12-text text-white  rounded-3 shadow-lg">
+                    <h2>步驟三：挑選登山導遊</h2>
+                    <p>我們的導遊團隊由經過嚴格訓練和認證的專業人士組成，無論您是初次登山還是有經驗的登山者，都能夠得到專業的幫助和指導。</p>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="s12-img bg-cover rounded-3 shadow-lg" style="height: 220px; background-image: url(img/mountain6.jpg);"></div>
+            </div>
+        </div>
+        <div class="row align-items-center flex-row-reverse">
+            <div class="col-6">
+                <div class="s12-text text-white  rounded-3 shadow-lg">
+                    <h2>步驟四：行前須知</h2>
+                    <p>在登山活動開始前，了解行前須知至關重要。請仔細閱讀所有行前須知，並與我們的工作人員確認任何疑問。</p>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="s12-img bg-cover rounded-3 shadow-lg" style="height: 220px; background-image: url(img/mountain3.jpg);"></div>
+            </div>
+        </div>
+    </div>                
+</div>
+</div>
+    </section>
+
+    <!--section 06路線介紹-->
+    <section id="s06">
+      <div class="container">
+        <div class="display-4 fw-900 text-center my-3">登山路線介紹</div>
+        <div class="row">
+          <div class="col-md-6 d-flex align-items-center wow  animate__zoomInLeft" data-wow-duration="1.5s"
+          data-wow-delay="0s"
+          data-wow-iteration="1">
+            <i class="fa-solid fa-kiwi-bird fa-6x me-4"></i>
+            <div>
+            <div class="h1 text-warning fw-900 my-3">入門路線</div>
+            <p>這條路線非常適合初次嘗試登山的朋友，路程較短且坡度平緩。沿途風景優美，適合各年齡層，讓您輕鬆享受大自然的美好，並體驗登山的樂趣。</p>
+          </div>
+          </div>
+          <div class="col-md-6 d-flex align-items-center wow  animate__zoomInRight" data-wow-duration="1.5s"
+          data-wow-delay="0s"
+          data-wow-iteration="1">
+            <i class="fa-solid fa-cat fa-6x me-4"></i>
+            <div>
+            <div class="h1 text-warning fw-900 my-3">初階路線</div>
+            <p>這條初階路線適合新手或有輕度登山經驗的朋友。路線設計簡單，景色宜人，是體驗登山並提升體能的理想選擇。</p>
+            </div>
+          </div>
+          <div class="col-md-6 d-flex align-items-center wow  animate__zoomInLeft" data-wow-duration="1.5s"
+          data-wow-delay="0s"
+          data-wow-iteration="1">
+            <i class="fa-solid fa-dog fa-6x me-4"></i>
+            <div>
+              <div class="h1 text-warning fw-900 my-3">高階路線</div>
+            <p>適合有一定登山經驗的登山者，這條高階路線較為艱難，坡度陡峭，需具備一定的體力和耐力。挑戰性強，但能欣賞到更壯麗的山景。</p>
+          </div>
+          </div>
+          <div class="col-md-6 d-flex align-items-center wow  animate__zoomInRight" data-wow-duration="1.5s"
+          data-wow-delay="0s"
+          data-wow-iteration="1">
+             <i class="fa-solid fa-horse-head fa-6x me-4"></i>
+            <div>            
+              <div class="h1 text-warning fw-900 my-3">國內旅遊</div>
+            <p>若您希望將登山與旅行結合，這些國內旅遊路線提供多樣的登山與觀光體驗，讓您在欣賞壯麗山景的同時，也能探索台灣各地的文化與自然風光。</p>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--section 14裝備推薦-->
+    <section id="s14" class="mb-5">
+      <div class="display-4 fw-900 text-center my-3">裝備推薦</div>
+      <div class="row">
+        <div class="col-md-6 col-lg-4">
+          <div class="box01 myroller1">
+            <div class="roller1">
+              <a href="#" class="d-none d-lg-block btn btn-secondary">查看更多</a>
+            </div>
+            <img src="img/dt1.jpg" class="img-fluid" alt="">
+            </div>
+              <div class="h4 fw-900 text-center">JOD-RX125-登山鞋</div>
+              <p class="fw-600 text-center">NT$4500</p>
+          
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="box01 myroller1">
+            <div class="roller1">
+              <a href="#" class="d-none d-lg-block btn btn-secondary">查看更多</a>
+            </div>
+            <img src="img/dt2.jpg" class="img-fluid" alt="">
+            </div>
+              <div class="h4 fw-900 text-center">登山急救包</div>
+              <p class="fw-600 text-center">NT$2000</p>
+          
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="box01 myroller1">
+            <div class="roller1">
+              <a href="#" class="d-none d-lg-block btn btn-secondary">查看更多</a>
+            </div>
+            <img src="img/dt3.jpg" class="img-fluid" alt="">
+            </div>        
+              <div class="h4 fw-900 text-center">MES保溫瓶</div>
+              <p class="fw-600 text-center">NT$1500</p>
+          
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="box01 myroller1">
+            <div class="roller1">
+              <a href="#" class="d-none d-lg-block btn btn-secondary">查看更多</a>
+            </div>
+            <img src="img/dt4.jpg" class="img-fluid" alt="">
+            </div>
+              <div class="h4 fw-900 text-center">山林-登山帽</div>
+              <p class="fw-600 text-center">NT$800</p>
+          
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="box01 myroller1">
+            <div class="roller1">
+              <a href="#" class="d-none d-lg-block btn btn-secondary">查看更多</a>
+            </div>
+            <img src="img/dt5.jpg" class="img-fluid" alt="">
+            </div>
+              <div class="h4 fw-900 text-center">山林-運動毛巾</div>
+              <p class="fw-600 text-center">NT$500</p>
+          
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="box01 myroller1">
+            <div class="roller1">
+              <a href="#" class="d-none d-lg-block btn btn-secondary">查看更多</a>
+            </div>
+            <img src="img/dt6.jpg" class="img-fluid" alt="">
+            </div>
+              <div class="h4 fw-900 text-center">KDHKL-鋁合金登山杖</div>
+              <p class="fw-600 text-center">NT$2200</p>
+          
+        </div>
+      </div>
+
+    </section>
+
+    <!--section 07團隊介紹-->
+    <section id="s07" class="mb-5">
+      <div class="container">
+        <div class="display-4 fw-900 text-center my-3 text-dark">快樂登山團隊介紹</div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="row align-items-center wow  animate__backInLeft" data-wow-duration="1s"
+              data-wow-delay="0s"
+              data-wow-iteration="1">
+              <div class="col-4 " >
+                <div class="bg-info rounded-circle bg-cover myroller1" style="width: 150px; height: 150px; background-image: url(img/people5.jpg);">
+                <h4 class="roller1 text-white">創辦人:Emily</h4>
+            </div>
+          </div>
+            <div class="col-8">
+                <div class="h1 text-warning fw-900 my-3">創辦人:Emily</div>
+                <p>簡介:擁有超過20年的登山經驗。她熱衷於推動戶外運動與自然保護的結合，並致力於幫助更多人以安全且可持續的方式探索大自然。她持有<strong>國際認證的登山指導員證照</strong>，並致力於推廣戶外安全知識與環境保護理念。</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="row align-items-center wow  animate__backInRight" data-wow-duration="2s"
+            data-wow-delay="0s"
+            data-wow-iteration="1">
+              <div class="col-4">
+                <div class="bg-info rounded-circle bg-cover" style="width: 150px; height: 150px; background-image: url(img/people4.jpg);"></div>
+              </div>
+              <div class="col-8">
+                <div class="h1 text-warning fw-900 my-3">總嚮導:Sophia</div>
+                <p>簡介:擁有超過15年的登山經驗，曾帶領過數百位隊員完成國內外各大高山挑戰。她持有<strong>登山指導員證書（ICL）</strong>、<strong>急救與野外生存證書（WFA）</strong>，並且擅長應急處置和登山安全指導。她的專業能力和冷靜判斷力使每次登山活動都充滿安全保障。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-md-4">
+            <div class="row align-items-center wow  animate__backInUp" data-wow-duration="3s"
+            data-wow-delay="0s"
+            data-wow-iteration="1">
+              <div class="col-4">
+                <div class="bg-info rounded-circle bg-cover" style="width: 120px; height: 120px; background-image: url(img/people3.jpg);"></div>
+              </div>
+              <div class="col-8">
+                <div class="h2 text-warning fw-900 my-3">嚮導:Charlotte</div>
+                <p>簡介:具有10年的登山帶隊經驗，精通各類登山技巧，並且擁有<strong>高山登山指導員證書（HMI）</strong>及<strong>應急救援證書（First Aid & CPR）</strong>。她對山野生態了解深刻，並能根據隊員的需求量身定制登山計劃，確保每位隊員都能在挑戰中得到適當的支持。。</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="row align-items-center wow  animate__backInUp" data-wow-duration="3s"
+            data-wow-delay="0s"
+            data-wow-iteration="1">
+              <div class="col-4">
+                <div class="bg-info rounded-circle bg-cover" style="width: 120px; height: 120px; background-image: url(img/people2.jpg);"></div>
+              </div>
+              <div class="col-8">
+                <div class="h2 text-warning fw-900 my-3">嚮導:Amelia</div>
+                <p>簡介:致力於將登山與環境保護結合。她持有<strong>登山指導員證書（IAAP）</strong>及<strong>野外生存指導員證書（WFA）</strong>，並經常為隊員們提供關於山野保護與可持續登山的課程。她的專業背景讓每次登山旅程更加富有教育意義。</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="row align-items-center wow  animate__backInUp" data-wow-duration="3s"
+            data-wow-delay="0s"
+            data-wow-iteration="1">
+              <div class="col-4">
+                <div class="bg-info rounded-circle bg-cover" style="width: 120px; height: 120px; background-image: url(img/people1.jpg);"></div>
+              </div>
+              <div class="col-8">
+                <div class="h2 text-warning fw-900 my-3">嚮導:James</div>
+                <p>簡介:經驗豐富的戶外活動專家，熟悉多條登山路線和野外生存技巧。他持有<strong>高山登山指導員證書（HMI）</strong>、<strong>應急急救證書（First Aid & CPR）</strong>及<strong>野外生存證書（Wilderness Survival）</strong>，能夠在挑戰性路線中保證隊員的安全。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--section 15行前準備-->
+    <section id="s15" class="mb-5">
+      <div class="container">
+        <div class="display-4 fw-900 text-center my-3 text-dark">行前須知</div>
+        <div class="box02">
+          <div class="h2 bg-003 text-light fw-900 text-center">衣著</div>         
+            <p class="text-center">行走休息時：簡單加個防風外套，別讓自己冷到吹到風。</p>
+            <p class="text-center">一般行走時：以長袖排汗為主，千萬不能穿棉質衣服，棉質衣服越吸汗，風吹過來就GG了！</p>
+            <p class="text-center">山屋休息時：可以把濕掉的衣服換乾淨的衣服，再把保暖的衣服穿上，還有重要頭部保暖也要注意喔。</p>           
+        </div>
+
+        <div class="box02">
+          <div class="h2 bg-003 text-light fw-900 text-center">台灣山</div>         
+            <p class="text-center">夏天的高山入夜後，溫度都會降到5~10度以內，所以保暖的物品一定要帶喔~。</p>
+            <p class="text-center">山上基本上不是睡山屋就是帳篷，山屋沒有熱水可以洗澡、沒有電可以充電是一個非常原始的地方。</p>            
+            <p class="text-center">台灣的山林需要大家來保護，上山的垃圾都要帶下山（包含果皮），果皮在高山上不容易腐敗的，同時也會有野生動物誤食，導致他們生病！</p>          
+        </div>
+
+        <div class="box02">
+          <div class="h2 bg-003 text-light fw-900 text-center">細讀</div>         
+            <p class="text-center">活動前若發生任何身體不舒服，請告知本單位；出發前請將身體狀況保持良好。</p>
+            <p class="text-center">活動中，團員們都是危險共同體，所以當有一名隊員有生命安全問題時，全隊需共同進退！</p>           
+            <p class="text-center">登山為一定風險活動，嚮導會盡最大努力照顧隊員，若因個人疏失(墜落，失足)不可歸咎於快樂登山。</p>              
+            <p class="text-center">在活動中請聽從嚮導指示，切勿擅自離隊，若依嚮導判斷需撤退，不可執意繼續前往，不聽勸告者，則所衍生相關費用或相關法律責任請自行負責。</p>          
+        </div>
+      </div>
+    </section>
+
+    <!--section 08方案選擇-->
+    <section id="s08" class="position-relative">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7 s08-text">
+          <dl class="row">
+            <dt class="col-sm-3">入門路線</dt>
+            <dd class="col-sm-9">
+              <p class="text-danger">價格：NT$3,000 起</p>
+              <p>這條入門路線適合登山新手或對挑戰性要求不高的朋友，行程輕鬆、風景迷人，讓您在大自然的懷抱中釋放壓力，放鬆身心。無需專業登山經驗，只需享受與自然的親密接觸。</p>
+              <p>我們的專業團隊將為您提供安全保障，並介紹登山的基本技巧與知識，讓您在美麗的山野中獲得愉快且有意義的經歷。</p>
+            </dd> 
+            <dt class="col-sm-3">初階路線</dt>
+            <dd class="col-sm-9">
+              <p class="text-danger">價格：NT$4,000 起</p>
+              <p>這條路線適合有些登山經驗或體能較好的朋友，步伐稍有挑戰，沿途風光更為壯麗。您將進一步挑戰自我，體驗爬升過程中的成就感，同時享受沿途的絕美景致。</p>
+              <p>導遊將指導您正確的登山技巧，並確保您在挑戰過程中的安全，讓您能夠順利完成登頂，達成自己的登山目標。</p>
+            </dd> 
+            <dt class="col-sm-3">高階路線</dt>
+            <dd class="col-sm-9">
+              <p class="text-danger">價格：NT$5,0000 起</p>
+              <p>這條高階路線適合具有一定登山經驗的朋友，挑戰性較高，攀登過程中需要較好的體力和技巧。途中會經過較為險峻的山脊和岩壁，讓您體驗真正的高山冒險。</p>
+              <p>專業的登山導遊將全程陪同，確保每位隊員的安全，並在途中提供登山技巧、急救措施等專業指導，讓您能夠在挑戰自我的同時，享受山野的原始魅力。</p>
+            </dd> 
+            <dt class="col-sm-3">國內旅遊</dt>
+            <dd class="col-sm-9">
+              <p class="text-danger">價格：NT$8,000 起</p>
+              <p>我們的國內旅遊行程帶您探索台灣最具代表性的登山路線，這些路線不僅擁有壯麗的自然景觀，還充滿歷史和文化的底蘊。每一條路線都精心設計，能讓您在登山過程中深入了解台灣的自然和人文特色。</p>
+              <p>專業的導遊將為您提供深入的講解，並確保全程安全。無論您是想在日月潭附近的山脈中悠遊，還是在阿里山的雲海中流連，我們都能為您提供最佳的旅遊體驗。</p>
+            </dd> 
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-end">
+      <div class="col-md-5 position-absolute top-0 bottom-0 bg-cover" style="background-image: url(img/bobo.jpg);"></div>
+    </div>
+    </section>
+
+    <!--section 09表單填寫-->
+     <section id="s09" class="mt-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d391970.85893429763!2d120.94635329046275!3d24.11288523134346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34685f88db284d2f%3A0x8efe444ad37a91c2!2sHsueh%20Shan!5e0!3m2!1szh-TW!2stw!4v1735193865193!5m2!1szh-TW!2stw" width="100%" height="580" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3 ">
+              <select name="" id="" class="form-select form-select-lg mt3">
+                <option value="" class="text-center" selected disabled>---選擇要採用的方案名稱---</option>
+                <option value="基本方案">基本方案</option>
+                <option value="經典方案">經典方案</option>
+                <option value="訂製專屬方案">訂製專屬方案</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="" class="form-label">姓名</label>
+              <input type="text" class="form-control">
+            </div>
+            <div class="mb-3">
+              <select name="selectCity" id="selectCity" class="form-select form-select-lg">
+                  <option value="" class="text-center" selected disabled>---選擇縣市名稱---</option>
+                  <option value="">台中市</option>
+              </select>
+          </div>
+          <div class="mb-3">
+              <select name="selectArea" id="selectArea" class="form-select form-select-lg">
+                  <option value="" class="text-center" selected disabled>---選擇鄉鎮區名稱---</option>
+                  <option value="">西屯區</option>
+              </select>
+          </div>
+          <div class="mb-3">
+              <input type="text" class="form-control" placeholder="X路X段X號.......">
+          </div>
+              <div class="mb-3">
+                <label for="" class="form-label">電話</label>
+                <input type="tel" class="form-control">
+              </div>
+              <div class="mb-3">
+                <label for="" class="form-label">E-mail</label>
+                <input type="email" class="form-control">
+              </div>
+              <div class="mb-3">
+                <label for="" class="form-label">人數</label>
+                <input type="number" min="1" max="100" class="form-control">
+              </div>
+            
+            <div class="text-end">
+            <button class="btn btn-secondary">取消</button>
+            <button class="btn btn-success">確定</button>
+            </div>
+          </div>
+        </div>
+      </div>
+     </section>
+
+    <!--section 10加入我們-->
+    <section id="s10" class="mt-3">
+      <div class="row">
+        <div class="col-md-6 bg-cover" style="background-image: url(img/coffee1.jpg);">
+          <div class="row">
+            <div class="col-md-9 m-3 p-3 text-white rounded-3 shadow-lg" style="background-color: rgba(0, 0, 0, 0.2);">
+              <small class="badge text-bg-warning ">加入我們</small>
+              <div class="h2 text-white fw-900 my-1">徵求嚮導一名</div>
+                        <p class="h2">待遇: <span class="display-5 text-white">55000</span>/月</p>
+              <p class="text-white my-2">工作內容:帶領登山隊伍進行登山活動、提供安全指導、確保參與者的安全並提供必要的登山技巧教育。</p>
+              <button class="btn btn-outline-warning">加入我們</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 bg-cover" style="background-image: url(img/coffee2.jpg);">
+          <div class="row">
+            <div class="col-md-9 m-3 p-3 text-white rounded-3 shadow-lg" style="background-color: rgba(0, 0, 0, 0.2);">
+              <small class="badge text-bg-warning ">加入我們</small>
+              <div class="h2 text-white fw-900 my-1">徵求司機一名</div>
+                        <p class="h2">待遇: <span class="display-5 text-white">46000</span>/月</p>
+              <p class="text-white my-2">工作內容:需要具備有效的駕照、良好的交通規則知識及駕駛經驗。具備長途駕駛經驗者及了解山區路況的司機將優先考慮。</p>
+              <button class="btn btn-outline-warning">加入我們</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--section 11-->
+    <section id="s11">
+      <div class="container">
+        <div class="row">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link active text-dark" aria-current="page" href="#">雲端技術班</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="#">12號</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="#">粘育綾</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+         var city;
+        var selectedCity; //紀錄所選取的縣市名稱
+        var selectedArea; //紀錄所選取的鄉鎮區名稱
+
+        var flag_username_reg = false;
+        var flag_password_reg = false;
+        var flag_re_password_reg = false;
+        var flag_chk01_reg = false;
+        var flag_username_login = false;
+        var flag_password_login = false;
+        $(function () {
+      //counterup2
+            const counterUp = window.counterUp.default
+
+            const callback = entries => {
+                entries.forEach(entry => {
+                    const el = entry.target
+                    if (entry.isIntersecting && ! el.classList.contains('is-visible')) {
+                        counterUp(el, {
+                            duration: 2000,
+                            delay: 16,
+                        })
+                        el.classList.add('is-visible')
+                    }
+                })
+            }
+
+            const IO = new IntersectionObserver(callback, { threshold: 1 })
+
+            const el01 = document.querySelector('.counter01')
+            IO.observe(el01)
+
+            const el02 = document.querySelector('.counter02')
+            IO.observe(el02)
+
+            const el03 = document.querySelector('.counter03')
+            IO.observe(el03)
+
+            const el04 = document.querySelector('.counter04')
+            IO.observe(el04)
+
+            //section 09 客戶需求表單 --> 縣市選單
+
+            //載入縣市資料
+            $.ajax({
+                type: "GET",
+                url: "js/CityCountyData.json",
+                dataType: "json",
+                async: false,
+                success: function(data){
+                    console.log(data);
+                    city = data;
+                },
+                error: function(){
+                    console.log("error-js/CityCountyData.json");
+                }
+            });
+
+            console.log(city);
+
+            //顯示縣市選單
+            $("#selectCity").empty();
+            $("#selectCity").append(`<option value="" class="text-center" selected disabled>---選擇縣市名稱---</option>`)
+            city.forEach(function(item){
+                console.log(item.CityName);
+
+                var strHTML = `<option value="${item.CityName}">${item.CityName}</option>`;
+                $("#selectCity").append(strHTML);
+            });
+
+            //監聽縣市選單
+            $("#selectCity").change(function(){
+              console.log($(this).val());
+              selectedCity = $(this).val();
+
+              city.forEach(function(item){
+                if(item.CityName == selectedCity){
+                    //產生鄉鎮區選單
+                    $("#selectArea").empty();
+                    $("#selectArea").append(`<option value="" class="text-center" selected disabled>---選擇鄉鎮區名稱---</option>`);                   
+                    item.AreaList.forEach(function(myitem){
+                    console.log(myitem.AreaName);
+
+                    var strHTML = `<option value="${myitem.AreaName}">${myitem.AreaName}</option>`;
+                    $("#selectArea").append(strHTML);
+                  });
+                }
+              });
+            });
+
+            //確認uid01是否存在
+            if(getCookie("Uid01")){
+              //將uid01傳遞至後端API執行驗證
+              //input {"uid01" : ""}
+              var JSONdata = {};
+              JSONdata["uid01"] = getCookie("Uid01");
+              console.log(JSON.stringify(JSONdata));
+
+              $.ajax({
+                type: "POST",
+                url: "member_control_api_vl.php?action=checkuid",
+                data: JSON.stringify(JSONdata),
+                dataType: "json",
+                success: showdata_checkuid,
+                error: function(){
+                  Swal.fire({
+                    title:"API介接錯誤?",
+                    text: "member_control_api_vl.php",
+                    icon: "error"
+                  });
+                }
+              });
+
+            }else{
+              Swal.fire({
+                title: "請先登錄會員!",
+                icon: "info",
+                allowOutsideClick: false,
+              });
+            }
+            
+            //即時監聽username_reg
+            $("#username_reg").bind("input propertychange", function(){
+              if($(this).val().length > 2 && $(this).val().length < 7){
+                //傳遞至後端API確認帳號是否可以使用
+                //input:("username", "xxxx"}
+                var JOSNdata = {};
+                JOSNdata["username"] = $("#username_reg").val();               
+                console.log(JSON.stringify(JSONdata));
+
+                $.ajax({
+                  type: "POST",
+                  url: "member_control_api_vl.php?action=checkuni",
+                  data: JSON.stringify(JOSNdata),
+                  dataType: "json",
+                  success: showdata_checkuni,
+                  error: function(){
+                    Swal.fire({
+                    title:"API介接錯誤?",
+                    text: "member_control_api_vl.php?action=checkuni",
+                    icon: "error"
+                });
+              }
+            });
+
+              }else{
+                $(this).removeClass("is-valid");
+                $(this).addClass("is-invalid");
+                $("#registerModal_username_invalid-feedback").text("不符合規則");
+                flag_username_reg = false;
+            }
+        });
+
+            //即時監聽password_reg
+            $("#password_reg").bind("input propertychange", function(){
+              $("#re_password_reg").removeClass("is-valid");
+              $("#re_password_reg").addClass("is-invalid");
+              if($(this).val().length > 2 && $(this).val().length < 7){
+                $(this).removeClass("is-invalid");
+                $(this).addClass("is-valid");
+                flag_password_reg = true;
+              }else{
+                $(this).removeClass("is-valid");
+                $(this).addClass("is-invalid");
+                flag_password_reg = false;
+            }
+        });
+
+        //即時監聽re_password_reg
+        $("#re_password_reg").bind("input propertychange", function(){
+              if(flag_password_reg && $(this).val() === $("#password_reg").val()){
+                $(this).removeClass("is-invalid");
+                $(this).addClass("is-valid");
+                flag_re_password_reg = true;
+              }else{
+                $(this).removeClass("is-valid");
+                $(this).addClass("is-invalid");
+                flag_re_password_reg = false;
+            }
+        });
+
+            //即時監聽email_reg
+            $("#email_reg").bind("input propertychange", function(){
+              if($(this).val().length > 2 && $(this).val().length < 11){
+                $(this).removeClass("is-invalid");
+                $(this).addClass("is-valid");
+                flag_email_reg = true;
+              }else{
+                $(this).removeClass("is-valid");
+                $(this).addClass("is-invalid");
+                flag_email_reg = false;
+            }
+        });
+
+        //即時監聽chk01
+        $("#chk01").change(function(){
+            console.log($(this).is(':checked'));
+            if($(this).is(':checked')){
+                $(this).next().text("同意");
+                $(this).removeClass("is-invalid");
+                $(this).addClass("is-valid");
+                flag_chk01_reg = true;
+            }else{
+                $(this).next().text("不同意");
+                $(this).removeClass("is-valid");
+                $(this).addClass("is-invalid");
+                flag_chk01_reg = false;
+            }
+        });
+
+        //即時監聽username_login
+        $("#username_login").bind("input propertychange", function () {
+                if ($(this).val().length > 0) {
+                    $(this).removeClass("is-invalid")
+                    flag_username_login = true;
+                } else {
+                    $(this).addClass("is-invalid")
+                    flag_username_login = false;
+                }
+            });
+
+        //即時監聽password_login
+        $("#password_login").bind("input propertychange", function () {
+                if ($(this).val().length > 0) {
+                    $(this).removeClass("is-invalid");
+                    flag_password_login = true;
+                } else {
+                    $(this).addClass("is-invalid");
+                    flag_password_login = false;
+                }
+            });
+
+        //ok_btn_rag按鈕監聽
+        $("#ok_btn_reg").click(function(){
+          if(flag_username_reg && flag_password_reg && flag_re_password_reg && flag_email_reg && flag_chk01_reg) {
+            //傳遞至後端API執行註冊行為
+            //input: {"username" : "owner04", "password" : "123456", "email" : "owner01@test.com"}
+            var JOSNdata = {};
+            JOSNdata["username"] = $("#username_reg").val();
+            JOSNdata["password"] = $("#password_reg").val();
+            JOSNdata["email"] = $("#email_reg").val();
+            console.log(JSON.stringify(JOSNdata));
+
+            $.ajax({
+              type: "POST",
+              url: "member_control_api_vl.php?action=register",
+              data: JSON.stringify(JOSNdata),
+              dataType: "json",
+              success: showdata_reg,
+              error: function(){
+                Swal.fire({
+                  title:"API介接錯誤?",
+                  text: "member_control_api_vl.php",
+                  icon: "error"
+                });
+              }
+            });
+          }else{
+            Swal.fire({
+              title: "欄位有錯誤, 請修正?",
+              icon: "warning",
+              showCancelButton: false,
+              confirmButtonColor: "#3085d6",
+              cancelButtonColor: "#d33",
+              confirmButtonText: "確認"
+            }).then((result) => {
+            //   if(result.isConfiremed){
+            //   location.href = "0115spa.html";
+            // }
+            });
+          }
+        });
+
+        //ok_btn_login按鈕監聽
+        $("#ok_btn_login").click(function(){
+          if(flag_username_login && flag_password_login){
+            //傳遞後端API執行登入行為
+            //input: {"username" : "user1", "password" : "123"}
+            var JSONdata = {};
+            JSONdata["username"] = $("#username_login").val();
+            JSONdata["password"] = $("#password_login").val();
+            console.log(JSON.stringify(JSONdata));
+            $.ajax({
+              type: "POST",
+              url: "member_control_api_vl.php?action=login",
+              data: JSON.stringify(JSONdata),
+              dataType: "json",
+              success: showdata_login,
+              error: function(){
+                Swal.fire({
+                  title:"API介接錯誤?",
+                  text: "member_control_api_vl.php",
+                  icon: "error"
+                });
+              }
+            });
+          }else{
+            Swal.fire({
+                  title:"輸入錯誤!",
+                  text: "請輸入帳號和密碼!",
+                  icon: "error"
+                });
+          }
+        });
+      
+
+      //s02_loginout_btn 按鈕監聽
+      $("#s02_loginout_btn").click(function(){
+        setCookie("Uid01", "", 7);
+        location.href = "0115spa.html";
+        });
+      });
+        
+      function showdata_reg(data){
+        console.log(data);
+        if (data.state){
+          Swal.fire({
+            title: data.message,
+            icon: "success"
+          }).then((result) => {
+            if(result.isConfirmed){
+              location.href = "0115spa.html";
+            }
+          });
+        }else{
+          Swal.fire({
+            title: data.message,
+            icon: "error"
+          });
+        }
+      }
+
+      function showdata_login(data){
+        console.log(data);
+        if(data.state){
+          Swal.fire({
+            title: data.message,
+            icon: "success"
+          }).then((result) => {
+            if(result.isConfirmed){
+              //login消失
+              $("#loginModal").modal("hide");
+
+              //顯示歡迎訊息
+              $("#s02_username_showtext").removeClass("d-none");
+              $("#s02_username_text").text(data.data.Username);
+              
+
+              //隱藏註冊與登入按鈕
+              $("#s02_reg_btn").addClass("d-none");
+              $("#s02_login_btn").addClass("d-none");
+
+              //顯示登出按鈕
+              $("#s02_loginout_btn").removeClass("d-none");
+
+              //顯示控制按鈕
+              $("#s02_control_panel_btn").removeClass("d-none");
+
+              //顯示口罩地圖按鈕
+              $("#s02_maskmap_btn").removeClass("d-none");
+
+              //顯示台中YouBike地圖按鈕
+              $("#s02_youbikemap_btn").removeClass("d-none");
+
+              //顯示台中YouBike地圖按鈕
+              $("#s02_hotelmap_btn").removeClass("d-none");
+
+              //顯示台中YouBike報表按鈕
+              $("#s02_hotelchart_btn").removeClass("d-none");
+
+              //uid驗證碼寫入cookie
+              setCookie("Uid01", data.data.Uid01, 7);
+            }
+          });
+        }else{
+          Swal.fire({
+            title: data.message,
+            icon: "error"
+          });
+        }
+      }
+
+      function showdata_checkuid(data){
+        console.log(data);
+        if(data.state){
+          //顯示歡迎訊息
+              $("#s02_username_showtext").removeClass("d-none");
+              $("#s02_username_text").text(data.data.Username);
+              
+
+              //隱藏註冊與登入按鈕
+              $("#s02_reg_btn").addClass("d-none");
+              $("#s02_login_btn").addClass("d-none");
+
+              //顯示登出按鈕
+              $("#s02_loginout_btn").removeClass("d-none");
+
+              //顯示控制按鈕
+              $("#s02_control_panel_btn").removeClass("d-none");
+
+              //顯示口罩地圖按鈕
+              $("#s02_maskmap_btn").removeClass("d-none");
+
+              //顯示youbike地圖按鈕
+              $("#s02_youbikemap_btn").removeClass("d-none");
+
+              //顯示youbike地圖按鈕
+              $("#s02_hotelmap_btn").removeClass("d-none");
+
+              //顯示台中YouBike報表按鈕
+              $("#s02_hotelchart_btn").removeClass("d-none");
+              
+        }
+      }
+
+      function showdata_checkuni(data){
+        console.log(data);
+        if(data.state){
+          //帳號不存在，可以使用
+          $("#username_reg").removeClass("is-invalid");
+          $("#username_reg").addClass("is-valid");
+          $("#registerModal_username_valid-feedback").text(data.message);
+          flag_username_reg = true;
+        }else{
+          //帳號已存在，不可使用
+          $("#username_reg").removeClass("is-valid");
+          $("#username_reg").addClass("is-invalid");
+          $("#registerModal_username_invalid-feedback").text(data.message);
+          flag_username_reg = false;
+        }
+      }
+      //from w3s
+      function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function getCookie(cname) {
+            let name = cname + "=";
+            let ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+    </script>
+    <script>
+      new WOW().init();
+    </script>
+  </body>
+</html>
